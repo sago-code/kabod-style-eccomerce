@@ -1,0 +1,133 @@
+.containerMenu {
+    display: flex;
+    width: 100%;
+    background: linear-gradient(0deg, #353334, #646264, #353334);
+    padding: 0px 1.5%;
+    position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.containerLogoAndSearch {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.imgLogo {
+    width: 9%;
+    margin-right: 3%;
+}
+
+.input-group {
+    flex-grow: 1;
+    max-width: 500px;
+    height: 40px;
+}
+
+.form-control {
+    color: #ede6e6!important;
+}
+
+.form-control:focus {
+    color: #ede6e6!important;
+}
+
+.form-outline .form-control~.form-label {
+    color: #ede6e6!important;
+}
+
+.form-outline:has(.form-control:focus) {
+    border-radius: 2px!important;
+    border: 3px solid #3b71ca!important;
+}
+
+.containerEncuentranos {
+    display: flex;
+    color: #ede6e6;
+    flex-direction: column;
+}
+
+.containerEnviarA {
+    display: flex;
+    color: #ede6e6;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 3%;
+}
+
+.btn-group {
+    background: transparent!important;
+    box-shadow: none!important;
+    color: #ede6e6!important;
+}
+
+.btn {
+    color: #ede6e6!important;
+}
+
+.EnlaceMaps {
+    color: #ede6e6;
+    text-decoration: none;
+}
+
+.dropdown-toggle {
+    --mdb-btn-padding-x: 0.8rem!important;
+}
+
+.containerMenuPrincipal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    width: 100%;
+}
+
+.containerMenuPrincipal .nav {
+    display: flex;
+    align-items: center;
+}
+
+.containerPerfil {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    font-size: 12px!important;
+}
+
+.nav-link i {
+    vertical-align: middle;
+}
+
+.DireEnvio {
+    font-size: 14px;
+}
+
+.EnlaceMapsUser {
+    font-size: 11px;
+}
+
+.p-compra {
+    width: 33%;
+    height: 98px;
+}
+
+.bi-cart3 {
+    width: 20%!important;
+}
+
+.EnviarAL {
+    font-size: 12px;
+}
+
+.encuentranosL {
+    font-size: 12px;
+}
