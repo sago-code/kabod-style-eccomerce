@@ -76,4 +76,4 @@ El carrusel se ha personalizado para:
 
 ---
 
-💡 **Autor:** Santiago Orjuela, Juan Sebastián Palomino
+💡 **Autores:** Santiago Orjuela, Juan Sebastián Palomino

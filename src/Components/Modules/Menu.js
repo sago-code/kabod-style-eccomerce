@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Logo from "../Images/Logo.png";
 import Pcompra from "../Images/1_compra.png";
 import "../Styles/Menu.css";
@@ -12,26 +13,31 @@ import { Input, Ripple, initMDB, Dropdown } from "mdb-ui-kit";
 initMDB({ Input, Ripple });
 
 export default function Menu() {
+    const navigate = useNavigate();
 
     useEffect(() => {
         initMDB({ Dropdown });
     }, []);
 
+    const handleLogoClick = () => {
+        navigate("/");
+    };
+
     return (
         <div className="containerMenu">
             {/*Logo y input de busqueda*/}
             <div className="containerLogoAndSearch">
-                <img src={Logo} alt="Logo Kabod Style" className="imgLogo"/>
-                <div class="input-group">
-                    <div class="form-outline" data-mdb-input-init>
-                        <input type="search" id="form1" class="form-control" />
-                        <label class="form-label" for="form1">Buscar Producto</label>
+                <img src={Logo} alt="Logo Kabod Style" className="imgLogo" onClick={handleLogoClick} style={{ cursor: 'pointer' }} />
+                <div className="input-group">
+                    <div className="form-outline" data-mdb-input-init>
+                        <input type="search" id="form1" className="form-control" />
+                        <label className="form-label" for="form1">Buscar Producto</label>
                     </div>
-                    <button type="button" class="btn btn-primary" data-mdb-ripple-init>
-                        <i class="fas fa-search"></i>
+                    <button type="button" className="btn btn-primary" data-mdb-ripple-init>
+                        <i className="fas fa-search"></i>
                     </button>
                 </div>
-                <img src={Pcompra} alt="primera compra envio gratis" className="p-compra"/>
+                <img src={Pcompra} alt="primera compra envio gratis" className="p-compra" />
                 <div className="containerEnviarA">
                     <label>Enviar a Santiago:</label>
                     <label className="EnviarAL">
@@ -149,7 +155,7 @@ export default function Menu() {
                                     data-mdb-dropdown-init
                                     aria-haspopup="true"
                                     aria-expanded="false">
-                                    <i class="bi bi-person-circle"/>
+                                    <i className="bi bi-person-circle" />
                                     Santiago
                                 </button>
                                 <ul className="dropdown-menu">
@@ -159,7 +165,7 @@ export default function Menu() {
                                     <li><button className="dropdown-item" type="button">Opiniones</button></li>
                                     <li><button className="dropdown-item" type="button">Cerrar Sesión</button></li>
                                 </ul>
-                            </div>    
+                            </div>
                         </li>
                     </ul>
                     <li className="nav-item">
@@ -167,7 +173,7 @@ export default function Menu() {
                             <a href="/" className="nav-link btn btn-transparent">
                                 Mis Compras
                             </a>
-                        </div>    
+                        </div>
                     </li>
                     <li className="nav-item">
                         <div className="btn-group">
@@ -179,14 +185,14 @@ export default function Menu() {
                     <li className="nav-item">
                         <div className="btn-group">
                             <a href="/" className="nav-link btn btn-transparent">
-                                <i class="bi bi-bell-fill fs-3"></i>
+                                <i className="bi bi-bell-fill fs-3"></i>
                             </a>
                         </div>
                     </li>
                     <li className="nav-item">
                         <div className="btn-group">
                             <a href="/" className="nav-link btn btn-transparent">
-                                <i class="bi bi-cart3 fs-3"></i>
+                                <i className="bi bi-cart3 fs-3"></i>
                             </a>
                         </div>
                     </li>

@@ -76,6 +76,7 @@ export default function Home() {
     <>
       <Menu />
       <div className="slidersContainer">
+        {/*Carusel seccion lo mas vendido*/}
         <Splide
           options={{
             type: "loop",
@@ -84,13 +85,63 @@ export default function Home() {
             arrows: true,
             pagination: false,
             rewind: true,
-            gap: '15px', // Evita que se generen clones extra
+            gap: '15px',
             clones: 0,
           }}
           hasTrack={false}
         >
           <div className="custom-wrapper">
             <h3>Lo más vendido</h3>
+            <SplideTrack>
+              {images.map((image, index) => (
+                <SplideSlide key={index}>
+                  <div className="product-card">
+                    <img src={image.src} alt={image.alt} className="product-image" />
+                    <div className="product-info">
+                      <h3 className="product-title">{image.title}</h3>
+                      <p className="product-old-price">{image.oldPrice}</p>
+                      <p className="product-new-price">{image.newPrice}</p>
+                      <p className="product-discount">{image.discount}</p>
+                    </div>
+                  </div>
+                </SplideSlide>
+              ))}
+                <SplideSlide>
+                  <div className="ver-mas-container">
+                    <button className="ver-mas-btn">Ver más</button>
+                  </div>
+                </SplideSlide>
+            </SplideTrack>
+            <div className="splide__arrows">
+                <button className="splide__arrow splide__arrow--prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                    </svg>
+                </button>
+                <button className="splide__arrow splide__arrow--next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                    </svg>
+                </button>
+            </div>
+          </div>
+        </Splide>
+        {/*Carusel seccion para ti*/}
+        <Splide
+          options={{
+            type: "loop",
+            autoWidth: true,
+            autoplay: true,
+            arrows: true,
+            pagination: false,
+            rewind: true,
+            gap: '15px',
+            clones: 0,
+          }}
+          hasTrack={false}
+        >
+          <div className="custom-wrapper">
+            <h3>Para ti</h3>
             <SplideTrack>
               {images.map((image, index) => (
                 <SplideSlide key={index}>
