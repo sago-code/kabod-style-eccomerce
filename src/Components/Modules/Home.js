@@ -16,6 +16,8 @@ import '@splidejs/react-splide/css/core';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
+import React, { useState } from 'react';
+
 export default function Home() {
     const images = [
         {
@@ -74,6 +76,22 @@ export default function Home() {
         },
     ];
 
+    const [quantities, setQuantities] = useState({});
+
+    const handleIncrement = (index) => {
+        setQuantities(prev => ({
+            ...prev,
+            [index]: (prev[index] || 0) + 1
+        }));
+    };
+
+    const handleDecrement = (index) => {
+        setQuantities(prev => ({
+            ...prev,
+            [index]: Math.max((prev[index] || 0) - 1, 0)
+        }));
+    };
+
     return (
         <>
         <Menu />
@@ -100,12 +118,23 @@ export default function Home() {
                     <SplideSlide key={index}>
                     <div className="product-card">
                         <div className="card-background" style={{ backgroundImage: `url(${image.src})` }}>
-                        <div className="product-info">
-                            <h3 className="product-title">{image.title}</h3>
-                            {image.oldPrice && <p className="product-old-price">{image.oldPrice}</p>}
-                            <p className="product-new-price">{image.newPrice}</p>
-                            {image.discount && <span className="discount-badge">{image.discount}</span>}
+							<div className="product-info">
+								<h3 className="product-title">{image.title}</h3>
+								{image.oldPrice && <p className="product-old-price">{image.oldPrice}</p>}
+								<p className="product-new-price">{image.newPrice}</p>
+								{image.discount && <span className="discount-badge">{image.discount}</span>}
+							</div>
                         </div>
+						<div className="card-overlay">
+                            <button className="btn btn-success" onClick={() => handleIncrement(index)}>
+                                <i className="bi bi-plus"></i>
+                            </button>
+                            <div className="quantity">
+                                <span>{quantities[index] || 0}</span>
+                            </div>
+                            <button className="btn btn-primary" onClick={() => handleDecrement(index)}>
+                                <i className="bi bi-dash"></i>
+                            </button>
                         </div>
                     </div>
                     </SplideSlide>
@@ -143,12 +172,23 @@ export default function Home() {
                     <SplideSlide key={index}>
                     <div className="product-card">
                         <div className="card-background" style={{ backgroundImage: `url(${image.src})` }}>
-                        <div className="product-info">
-                            <h3 className="product-title">{image.title}</h3>
-                            {image.oldPrice && <p className="product-old-price">{image.oldPrice}</p>}
-                            <p className="product-new-price">{image.newPrice}</p>
-                            {image.discount && <span className="discount-badge">{image.discount}</span>}
+                            <div className="product-info">
+                                <h3 className="product-title">{image.title}</h3>
+                                {image.oldPrice && <p className="product-old-price">{image.oldPrice}</p>}
+                                <p className="product-new-price">{image.newPrice}</p>
+                                {image.discount && <span className="discount-badge">{image.discount}</span>}
+                            </div>
                         </div>
+                        <div className="card-overlay">
+                            <button className="btn btn-success" onClick={() => handleIncrement(index)}>
+                                <i className="bi bi-plus"></i>
+                            </button>
+                            <div className="quantity">
+                                <span>{quantities[index] || 0}</span>
+                            </div>
+                            <button className="btn btn-primary" onClick={() => handleDecrement(index)}>
+                                <i className="bi bi-dash"></i>
+                            </button>
                         </div>
                     </div>
                     </SplideSlide>

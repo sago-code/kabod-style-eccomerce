@@ -1,3 +1,4 @@
+// Primero, importamos Link al inicio del archivo junto a useNavigate
 import { useNavigate } from "react-router-dom";
 import Logo from "../Images/Logo.png";
 import Pcompra from "../Images/1_compra.png";
@@ -10,6 +11,9 @@ import 'mdb-ui-kit/js/mdb.es.min.js';
 import { useEffect } from "react";
 import { Input, Ripple, initMDB, Dropdown } from "mdb-ui-kit";
 
+// Eliminar esta línea
+// import { useHistory } from "react-router-dom";
+
 initMDB({ Input, Ripple });
 
 export default function Menu() {
@@ -21,6 +25,12 @@ export default function Menu() {
 
     const handleLogoClick = () => {
         navigate("/");
+        window.location.reload();
+    };
+
+    const handlePerfilClick = () => {
+        navigate("/Perfil");
+        window.location.reload();
     };
 
     return (
@@ -159,7 +169,11 @@ export default function Menu() {
                                     Santiago
                                 </button>
                                 <ul className="dropdown-menu">
-                                    <li><button className="dropdown-item" type="button">Perfil</button></li>
+                                    <li>
+                                        <button className="dropdown-item" onClick={handlePerfilClick}>
+                                            Perfil
+                                        </button>
+                                    </li>
                                     <li><button className="dropdown-item" type="button">Compras</button></li>
                                     <li><button className="dropdown-item" type="button">Historial</button></li>
                                     <li><button className="dropdown-item" type="button">Opiniones</button></li>
