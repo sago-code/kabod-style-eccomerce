@@ -1,4 +1,3 @@
-// Primero, importamos Link al inicio del archivo junto a useNavigate
 import { useNavigate } from "react-router-dom";
 import Logo from "../Images/Logo.png";
 import Pcompra from "../Images/1_compra.png";
@@ -10,9 +9,6 @@ import 'mdb-ui-kit/css/mdb.min.css';
 import 'mdb-ui-kit/js/mdb.es.min.js';
 import { useEffect } from "react";
 import { Input, Ripple, initMDB, Dropdown } from "mdb-ui-kit";
-
-// Eliminar esta línea
-// import { useHistory } from "react-router-dom";
 
 initMDB({ Input, Ripple });
 
