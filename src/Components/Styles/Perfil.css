@@ -68,3 +68,177 @@
 section {
     padding: 20px;
 }
+
+.profile-container {
+    display: flex;
+    background-color: #ededed;
+    min-height: calc(100vh - 75px);
+    padding: 32px;
+    gap: 32px;
+}
+
+.sidebar-section {
+    width: 290px;
+}
+
+.main-section {
+    flex: 1;
+    max-width: 800px;
+}
+
+.profile-header {
+    background: #fff;
+    border-radius: 6px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.profile-initials {
+    width: 72px;
+    height: 72px;
+    background: #3483fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
+}
+
+.user-details h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 500;
+    font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
+}
+
+.user-email {
+    color: #666;
+    margin: 4px 0;
+    font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
+}
+
+.user-level {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
+}
+
+.level-text {
+    color: #3483fa;
+}
+
+.level-separator {
+    color: #999;
+}
+
+.mercado-points {
+    color: #3483fa;
+    text-decoration: none;
+}
+
+.profile-sections {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.section-item {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.section-item:last-child {
+    border-bottom: none;
+}
+
+.section-icon {
+    color: #3483fa;
+}
+
+.section-content {
+    flex: 1;
+}
+
+.section-content h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
+}
+
+.section-content p {
+    margin: 4px 0 0;
+    color: #666;
+    font-size: 14px;
+    font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.status-dot.completed {
+    background-color: #00a650;
+}
+
+.status-dot.pending {
+    background-color: #ff8000;
+}
+
+.status-text {
+    font-size: 14px;
+    font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
+}
+
+.status-text:not(.warning) {
+    color: #00a650;
+}
+
+.status-text.warning {
+    color: #ff8000;
+}
+
+.bi-chevron-right {
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .sidebar-section {
+        width: 100%;
+    }
+
+    .main-section {
+        width: 100%;
+    }
+}

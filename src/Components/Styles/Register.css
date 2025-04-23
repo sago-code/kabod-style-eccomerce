@@ -1,0 +1,7 @@
+.container-header {
+    width: 100%;
+    background: linear-gradient(0deg, #353334, #646264, #353334);
+    height: 75px;
+    display: flex;
+    align-items: center;
+}

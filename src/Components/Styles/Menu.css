@@ -18,6 +18,7 @@
 .imgLogo {
     width: 9%;
     margin-right: 3%;
+    cursor: pointer;
 }
 
 .input-group {

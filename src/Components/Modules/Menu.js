@@ -7,13 +7,14 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'mdb-ui-kit/css/mdb.min.css';
 import 'mdb-ui-kit/js/mdb.es.min.js';
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Input, Ripple, initMDB, Dropdown } from "mdb-ui-kit";
 
 initMDB({ Input, Ripple });
 
 export default function Menu() {
     const navigate = useNavigate();
+    const [userData, setUserData] = useState();
 
     useEffect(() => {
         initMDB({ Dropdown });
@@ -33,7 +34,7 @@ export default function Menu() {
         <div className="containerMenu">
             {/*Logo y input de busqueda*/}
             <div className="containerLogoAndSearch">
-                <img src={Logo} alt="Logo Kabod Style" className="imgLogo" onClick={handleLogoClick} style={{ cursor: 'pointer' }} />
+                <img src={Logo} alt="Logo Kabod Style" className="imgLogo" onClick={handleLogoClick}/>
                 <div className="input-group">
                     <div className="form-outline" data-mdb-input-init>
                         <input type="search" id="form1" className="form-control" />
@@ -60,7 +61,7 @@ export default function Menu() {
                             <div className="containerEncuentranos">
                                 <label>Encuentranos en:</label>
                                 <label className="encuentranosL">
-                                    <a href="https://www.google.com/maps/place/Cl.+57a+Sur+%2379g-4,+Bogotá/@4.6100283,-74.1785616,15.25z/data=!4m5!3m4!1s0x8e3f9e6139be0f59:0x7339a76d452673b8!8m2!3d4.612602!4d-74.1758485?hl=es&entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="EnlaceMaps">
+                                    <a href="https://maps.app.goo.gl/MvfdFZZGCNwUYCdc9" target="_blank" rel="noopener noreferrer" className="EnlaceMaps">
                                         <i className="bi bi-geo-alt-fill"></i>Calle 57A #79G - 04
                                     </a>
                                 </label>
@@ -152,7 +153,8 @@ export default function Menu() {
                         </li>
                     </ul>
                 </div>
-                {/*Menu Perfil, Mis Compras, Favoritos, Notificaciones y Carrito*/}
+                {/*Menu Iniciar Sesion, Crear cuenta, Perfil, Mis Compras, Favoritos, Notificaciones y Carrito*/}
+                {userData && userData.id !== null ? (
                 <div className="containerPerfil">
                     <ul className="nav justify-content-end">
                         <li className="nav-item">
@@ -177,36 +179,56 @@ export default function Menu() {
                                 </ul>
                             </div>
                         </li>
+                        <li className="nav-item">
+                            <div className="btn-group">
+                                <a href="/" className="nav-link btn btn-transparent">
+                                    Mis Compras
+                                </a>
+                            </div>
+                        </li>
+                        <li className="nav-item">
+                            <div className="btn-group">
+                                <a href="/" className="nav-link btn btn-transparent">
+                                    Favoritos
+                                </a>
+                            </div>
+                        </li>
+                        <li className="nav-item">
+                            <div className="btn-group">
+                                <a href="/" className="nav-link btn btn-transparent">
+                                    <i className="bi bi-bell-fill fs-3"></i>
+                                </a>
+                            </div>
+                        </li>
+                        <li className="nav-item">
+                            <div className="btn-group">
+                                <a href="/" className="nav-link btn btn-transparent">
+                                    <i className="bi bi-cart3 fs-3"></i>
+                                </a>
+                            </div>
+                        </li>
                     </ul>
-                    <li className="nav-item">
-                        <div className="btn-group">
-                            <a href="/" className="nav-link btn btn-transparent">
-                                Mis Compras
-                            </a>
-                        </div>
-                    </li>
-                    <li className="nav-item">
-                        <div className="btn-group">
-                            <a href="/" className="nav-link btn btn-transparent">
-                                Favoritos
-                            </a>
-                        </div>
-                    </li>
-                    <li className="nav-item">
-                        <div className="btn-group">
-                            <a href="/" className="nav-link btn btn-transparent">
-                                <i className="bi bi-bell-fill fs-3"></i>
-                            </a>
-                        </div>
-                    </li>
-                    <li className="nav-item">
-                        <div className="btn-group">
-                            <a href="/" className="nav-link btn btn-transparent">
-                                <i className="bi bi-cart3 fs-3"></i>
-                            </a>
-                        </div>
-                    </li>
                 </div>
+                ) : (
+                    <div className="containerPerfil">
+                        <ul className="nav justify-content-end">
+                            <li className="nav-item">
+                                <div className="btn-group">
+                                    <a href="/Register" className="nav-link btn btn-transparent">
+                                        Crea tu cuenta
+                                    </a>
+                                </div>
+                            </li>
+                            <li className="nav-item">
+                                <div className="btn-group">
+                                    <a href="/Login" className="nav-link btn btn-transparent">
+                                        Ingresa
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                )}
             </div>
         </div>
     );
