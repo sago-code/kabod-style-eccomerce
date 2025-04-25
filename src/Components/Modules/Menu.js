@@ -61,7 +61,7 @@ export default function Menu() {
                             <div className="containerEncuentranos">
                                 <label>Encuentranos en:</label>
                                 <label className="encuentranosL">
-                                    <a href="https://maps.app.goo.gl/MvfdFZZGCNwUYCdc9" target="_blank" rel="noopener noreferrer" className="EnlaceMaps">
+                                    <a href="https://maps.app.goo.gl/L4WiKSyTSfhqiB9D6" target="_blank" rel="noopener noreferrer" className="EnlaceMaps">
                                         <i className="bi bi-geo-alt-fill"></i>Calle 57A #79G - 04
                                     </a>
                                 </label>
